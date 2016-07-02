@@ -1,11 +1,26 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
+  
+}
+h1{
+	color:#00B7FF;
 }
 .center{
 	text-align: center;
 }
 a {
   color: #00B7FF;
+}
+.logo{
+	width: 150px;
+	height: 150px;
+}
+.card-content{
+	font-size: 24px;
+}
+.firstselect{
+	border-width: 5px;
+	border-color: #00B7FF;
+	border-style: solid;
 }

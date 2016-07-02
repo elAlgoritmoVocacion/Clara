@@ -1,6 +1,30 @@
 extends layout
 
 block content
-  .center
-    h1 Clara
-    input(placeholder="Escriba su consulta")
+    .center
+        img.logo(src="img/icon.png")
+    h1.center Clara
+    input(placeholder="Escriba su consulta del Anses aquí")
+    .row.resultados
+      .col.s6.m6.firstselect
+        .card(id="cuil")
+          .card-image
+            img(src='img/anses.jpg')
+            span.card-title Cuil
+          .card-content
+            p
+              | I am a very simple card. I am good at containing small bits of information.
+              | I am convenient because I require little markup to use effectively.
+          .card-action
+            a.aves-effect.waves-light.btn(href='#') Ir a este sitio
+      .col.s6.m6
+          .card("Haberes")
+            .card-image
+              img(src='img/cuil.jpg')
+              span.card-title Haberes
+            .card-content
+              p
+                | I am a very simple card. I am good at containing small bits of information.
+                | I am convenient because I require little markup to use effectively.
+            .card-action
+              a.aves-effect.waves-light.btn(href='#') Ir a este sitio

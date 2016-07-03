@@ -1,30 +1,77 @@
 extends layout
 
 block content
+  .clara(ng-controller="claraController")
+    .navbar-fixed
+      nav
+        .nav-wrapper
+          img.logo.circle(src="img/icon.png")
+          a.brand-logo(href='#!') Clara
+          ul.right.hide-on-med-and-down
+            li
+              form(id="claraChat")
+                .input-field
+                  i.material-icons.prefix chat_bubble_outline
+                  input#icon_prefix.validate(placeholder="Escriba su consulta",ng-init="resp='Hola, soy Clara, porfavor decime tu consulta sobre tramites de ANSES'"  ng-model="text" ng-change="askClara(text)" ng-model-options='{ debounce: 1000 }' type="text")
+
+            li
+              a(href='mobile.html')
+                i.material-icons info_outline
+
     .center
-        img.logo(src="img/icon.png")
-    h1.center Clara
-    input(placeholder="Escriba su consulta del Anses aquí")
-    .row.resultados
-      .col.s6.m6.firstselect
-        .card(id="cuil")
-          .card-image
-            img(src='img/anses.jpg')
-            span.card-title Cuil
-          .card-content
-            p
-              | I am a very simple card. I am good at containing small bits of information.
-              | I am convenient because I require little markup to use effectively.
-          .card-action
-            a.aves-effect.waves-light.btn(href='#') Ir a este sitio
-      .col.s6.m6
-          .card("Haberes")
-            .card-image
-              img(src='img/cuil.jpg')
-              span.card-title Haberes
+    #rtaClara
+        .card-panel.grey.lighten-5.z-depth-1
+              span.black-text
+                  h5{{resp}}
+
+    #contenedor.card-panel
+      .row
+        #SlotSave.col.s4.card-panel.save.dropMe
+          i.fa.fa-thumbs-up.fa-5x(aria-hidden='true')
+
+        #ViewCard.col.s4.card-panel
+          #CUIL.card.small.dragMe
+            .card-image.waves-effect.waves-block.waves-light
+              img.activator(src='img/anses.jpg')
             .card-content
+              span.card-title.activator.grey-text.text-darken-4
+                | CUIL
+                i.material-icons.right more_vert
               p
-                | I am a very simple card. I am good at containing small bits of information.
-                | I am convenient because I require little markup to use effectively.
-            .card-action
-              a.aves-effect.waves-light.btn(href='#') Ir a este sitio
+                a(href='http://www.anses.gob.ar/prestacion/cuil-97') Ir al sitio
+            .card-reveal
+              span.card-title.grey-text.text-darken-4
+                | CUIL
+                i.material-icons.right close
+              p
+                | El Código Único de Identificación Laboral (CUIL) es necesario gestionarlo al inicio de la actividad laboral y se utiliza también para cobrar  prestaciones que brinda ANSES y/o realizar trámites ante otras entidades que lo requieran. Se puede gestionar, sin turno previo en cualquier delegación de ANSES.
+          #haberes.card.small.dragMe
+            .card-image.waves-effect.waves-block.waves-light
+              img.activator(src='img/cuil.jpg')
+            .card-content
+              span.card-title.activator.grey-text.text-darken-4
+                | Pago de Haberes
+                i.material-icons.right more_vert
+              p
+                a(href='http://www.anses.gob.ar/prestacion/haberes-impagos-110') Ir al sitio
+            .card-reveal
+              span.card-title.grey-text.text-darken-4
+                | Pago de Haberes
+                i.material-icons.right close
+              p
+                | Todo jubilado o pensionado tiene el derecho de reclamar los haberes que no pudo cobrar, dentro de los dos años posteriores a la fecha en la cual debería haberlo hecho. Para el pago inmediato, el haber reclamado debe encontrarse dentro del año inmediato anterior a la fecha del reclamo.
+          //ul#trash-can.sortable
+
+        #trash-can.col.s4.card-panel.trash.dropMe
+            i.fa.fa-thumbs-down.fa-5x(aria-hidden='true')
+
+
+
+
+
+  footer.page-footer
+    .footer-copyright
+      .container
+        | © By #AlgoritmoVocac
+       // a.grey-text.text-lighten-4.right(href='#!')
+          i.fa.fa-facebook-square.fa-1x(aria-hidden='true')

@@ -1,26 +1,188 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  
+@font-face {
+	font-family: 'MuseoSlab'; /*a name to be used later*/
+	src: url('/fonts/museoslab-500.otf'); /*URL to font*/
 }
+
+
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	height:100%;
+	margin:0;
+}
+
+
+
 h1{
 	color:#00B7FF;
+	font-weight: thin;
 }
+
+#claraChat {
+	margin-right:450px;
+}
+
+
+.card-panel {
+	overflow: hidden;
+	height: 90px;
+	max-height: 90px;
+	min-height: 90px;
+}
+
 .center{
 	text-align: center;
 }
 a {
-  color: #00B7FF;
+	color: #00B7FF;
 }
 .logo{
-	width: 150px;
-	height: 150px;
+	width: 100px;
+	height: 100px;
 }
 .card-content{
-	font-size: 24px;
+	font-size: 16pt;
 }
 .firstselect{
-	border-width: 5px;
+	border-width: 10px;
 	border-color: #00B7FF;
 	border-style: solid;
+	-webkit-border-radius: 5px !important;
+	-moz-border-radius: 5px !important;
+	border-radius: 5px !important;
 }
+
+input:focus + label {
+	color: red !important;
+}
+/* label underline focus color */
+
+
+input:hover {
+	border-radius: 30px;
+	background-color: white;
+	opacity:0.3;
+	color: black;
+	box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+}
+
+input:focus {
+	border-bottom: 1px solid white !important;
+	border-radius: 30px;
+	background-color: white;
+	color: black;
+	opacity: 0.9;
+	box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+
+}
+
+
+
+input:focus:hover {
+	border-bottom: 3px solid #00B7FF !important;
+	border-radius: 30px;
+	background-color: white;
+	color: black;
+	box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.22), 0 25px 55px 0 rgba(0, 0, 0, 0.21);
+	opacity:1;
+}
+
+
+.material-icons.prefix {
+	color:white;
+}
+
+.material-icons.prefix.active {
+	color:lightgray;
+}
+
+
+
+
+
+
+
+
+
+.resultados{
+	padding-top:25px;
+}
+
+.logo {
+	width:64px; /* you can use % */
+	height: auto;
+}
+
+.card { width: 400px;}
+
+#contenedor {
+	min-height: 370px;
+	max-height: 390px;
+	overflow:scroll;
+	overflow-x: hidden;
+
+}
+
+footer {
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	width:100%;
+}
+
+h5 {
+	vertical-align: middle;
+	text-align:center;
+}
+
+
+s
+
+.brand-logo {
+	font-family:"MuseoSlab", "Roboto" !important;
+	text-shadow: 2px 1px 0 #e1595e,2px 2px 0 rgba(0,0,0,0.1);}
+
+#trash-can {
+
+}
+
+.col.s4 {
+	width: 400px;
+	height: 300px;
+	min-width: 350px;
+	min-height: 300px;
+
+
+
+}
+
+.fa-thumbs-down {
+	text-align: center;
+	line-height:inherit!important;
+	display: block;
+	vertical-align: middle;
+	font-size: 200px;
+	height: 50px;
+}
+
+.fa-thumbs-up {
+	text-align: center;
+	line-height:inherit!important;
+	display: block;
+	vertical-align: middle;
+	font-size: 200px;
+	height: 50px;
+}
+
+.col.s4.card-panel.trash {
+	background-color: rgb(249, 181, 182);
+}
+
+.col.s4.card-panel.save {
+	background-color:rgb(226, 238, 218);
+}
+
+.droppable { float: left; width: 150px; height: 150px; padding: 0.5em; float: left; }
+.draggable { width: 100px; height: 50px; padding: 0.5em; margin: 8px 10px 8px 20px; cursor: hand; cursor: pointer; border: 1px solid #000; }

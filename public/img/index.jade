@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    .center
+        img.logo(src="img/icon.png")
+    h1.center Clara
+    input(placeholder="Escriba su consulta del Anses aquí")
+    .row.resultados
+      .col.s6.m6
+        .card.firstselect(id="cuil")
+          .card-image
+            img(src='img/anses.jpg')
+            span.card-title Cuil
+          .card-content
+            p El Código Único de Identificación Laboral (CUIL) es necesario gestionarlo al inicio de la actividad laboral y se utiliza también para cobrar  prestaciones que brinda ANSES y/o realizar trámites ante otras entidades que lo requieran. Se puede gestionar, sin turno previo en cualquier delegación de ANSES. 
+
+
+          .card-action
+            a.aves-effect.waves-light.btn(href='http://www.anses.gob.ar/prestacion/cuil-97', target="_blank") Ir a este sitio
+      .col.s6.m6
+          .card("Haberes")
+            .card-image
+              img(src='img/cuil.jpg')
+              span.card-title Haberes Impagos
+            .card-content
+              p Todo jubilado o pensionado tiene el derecho de reclamar los haberes que no pudo cobrar, dentro de los dos años posteriores a la fecha en la cual debería haberlo hecho. Para el pago inmediato, el haber reclamado debe encontrarse dentro del año inmediato anterior a la fecha del reclamo.
+            .card-action
+              a.aves-effect.waves-light.btn(href='http://www.anses.gob.ar/prestacion/haberes-impagos-110', target="_blank") Ir a este sitio
+

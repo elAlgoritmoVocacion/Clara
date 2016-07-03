@@ -7,12 +7,40 @@ var bodyParser = require('body-parser');
 var cfenv = require('cfenv');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var watson = require('watson-developer-cloud');
+
 
 var app = express();
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+// watson api
+var conn_json = {
+  url: 'https://gateway.watsonplatform.net/natural-language-classifier/api',
+      username: '0998028e-d33d-487d-adc5-7d48a6dd15b2',
+      password: 'kdhGMt3ohs8e',
+      version: 'v1'};
+
+var nlc = new watson.natural_language_classifier(conn_json);
+
+app.get('/classify', function(req, res, next) {
+  var params = {
+    classifier: '2374f9x68-nlc-10265', // from beta toolkit
+    text: req.query.text
+  };
+
+  nlc.classify(params, function(err, results) {
+    if (err)
+      return next(err);
+    else
+      res.json(results);
+  });
+});
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
